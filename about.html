@@ -5,56 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Section</title>
     <link rel="stylesheet" href="about.css">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <header class="header" >
+    <header class="header">
 
         <div class="container flex ">
-            <a href=""><img class="logo" src="./assets/Logo.jpg" alt=""></a>
-        
-
-            <div class="nav-container ">
-                <nav class="nav" id="navbar">
-                    <ul class="nav-links ">
-                        <li><a href="index.html" >Home</a></li>
-                        <li><a href="about.html" class="active">About</a></li>
-                        <li>
-                            <a href="service.html">Services</a>
-                            <div class="dropdown">
-                                <a href="#">Web Development</a>
-                                <a href="#">App Development</a>
-                                <a href="#">SEO Services</a>
-                            </div>
-                        </li>
-                        <li><a href="#portfo" >Portfolio</a></li>
-                        <li><a href="contact.html" id="contact-link">Contact Us</a></li>
-                        <li>
-                            <a href="#">Pages</a>
-                            <div class="dropdown">
-                                <a href="#">Blog</a>
-                                <a href="#">FAQ</a>
-                                <a href="#">Testimonials</a>
-                            </div>
-                        </li>
-                    </ul>
-                    
-                </nav>
-
-                <a href="#" class="hamburger" id="menu"><i class="fa-solid fa-bars"></i></a>
-                            
-                <a href="#" class="get-started">GET STARTED</a>
-            </div>
+          <a href=""><img class="logo" src="./assets/Logo.jpg" alt=""></a>
+    
+    
+          <div class="nav-container ">
+            <nav class="nav" id="navbar">
+              <ul class="nav-links ">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#port">portfolio</a></li>
+                <li><a href="#contact-form" >Contact Us</a></li>
+               
+              </ul>
+    
+            </nav>
+          </div>
+    
+          <a href="#" class="hamburger" id="menu"><i class="fa-solid fa-bars"></i></a>
+    
+          <a href="#contact" class="get-started">GET STARTED</a>
         </div>
-
-          
-        
-    </header>
+        </div>
+    
+    
+    
+      </header>
 
     <!-- about section -->
-
-
     <section class="about-section">
         <div class="container">
             <div class="about-container">
@@ -67,7 +53,7 @@
                         with cutting-edge IT solutions. Discover how we bring innovation, expertise, and passion 
                         to every project we undertake.
                     </p>
-                    <button class="explore-btn">Explore More</button>
+                    <button id="aboutbtn">Explore More</button>
                 </div>
 
                 <!-- Right Image -->
@@ -247,68 +233,57 @@
     <!-- footer -->
 
     <footer class="footer">
-        <div class="container">
-          <div class="footer-logo">
-            <img src="./assets/Logo.jpg" style="width: 48px; border-radius:50%" alt="Digimax Logo">
-            <p>Transforming Ideas into Digital Excellence. Elevate your online presence with our innovative solutions and strategic digital services.</p>
-          </div>
-      
-          <div class="footer-links">
-            <div class="footer-column">
-              <h4>Services</h4>
-              <ul>
-                <li><a href="#">Website Development</a></li>
-                <li><a href="#">App Development</a></li>
-                <li><a href="#">Digital Marketing</a></li>
-                <li><a href="#">Graphic Design</a></li>
-                <li><a href="#">Brand Identity</a></li>
-                <li><a href="#">Search Engine Optimization</a></li>
-              </ul>
+        <div class="wrapper">
+          <div class="footer-top">
+            <div class="brand">
+              <div class="logo">
+                <img src="./assets/Logo.jpg" alt="Logo">
+                <span class="brand-name">Kalope</span>
+              </div>
+    
+              <p class="brand-description">Innovating through technology and creativity, building the future.</p>
             </div>
-      
-            <div class="footer-column">
-              <h4>Support</h4>
-              <ul>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Ticket Support</a></li>
-                <li><a href="#">Sales Support</a></li>
-              </ul>
-            </div>
-      
-            <div class="footer-column">
-              <h4>Contact Us</h4>
-              <ul>
-                <li><a href="#">Email: support@digimax.com</a></li>
-                <li><a href="#">Phone: +123 456 7890</a></li>
-              </ul>
-            </div>
-      
-            <div class="footer-column">
-              <h4>Company</h4>
-              <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Articles & News</a></li>
-                <li><a href="#">Legal Notices</a></li>
-              </ul>
-            </div>
-      
-            <div class="footer-column">
-              <h4>Follow Us</h4>
-              <ul class="social-media">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-              </ul>
+            <div class="footer-links">
+    
+              <div class="column">
+                <h3>Explore</h3>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Blog</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <h3>Company</h3>
+                <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Career</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Service</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <h3>Contact</h3>
+                <ul>
+                  <li> <a href="#"> <i class="fa-solid fa-location-dot"></i> Near Bus Stands Patna , Bihar,
+                      India,(234567)</a></li>
+                  <li><a href="#"> <i class="fa-solid fa-phone-volume"></i> +91 9876543211</a></li>
+                  <li><a href="#"> <i class="fa-solid fa-envelope"></i> kalope@gmail.com</a></li>
+    
+                </ul>
+              </div>
             </div>
           </div>
-      
+    
           <div class="footer-bottom">
-            <p>&copy; 2025 Kalope. All Rights Reserved.</p>
+            <p>© 2025 Kalope — <a href="https://twitter.com/knyttneve">All Right Reserved</a></p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </footer>

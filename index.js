@@ -34,6 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
     targets.forEach((target) => observer.observe(target));
   });
 
+  // contact-section
+ 
+  document.getElementById("feedback-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    alert("Thank you for your feedback!");
+    this.reset();
+  });
+
+
 
   
 
