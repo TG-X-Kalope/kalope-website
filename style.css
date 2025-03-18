@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
 
 * {
   margin: 0;
@@ -22,11 +22,16 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
+
 
 h3 {
   font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 2.5rem;
 }
 
 p {
@@ -602,8 +607,20 @@ p {
 
 .stats-section {
   padding: 2rem 1rem;
-  background-color: black;
   padding-block: 3rem;
+}
+
+.stats-section h2 {
+  color: white;
+  color: #af5826;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.stats-section h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .stats-container {
@@ -1099,6 +1116,84 @@ p {
   color: wheat;
 }
 
+/* CTA Sections */
+
+
+.cta-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  /* Increased top margin for more space */
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(#A8653E, #301508);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: var(--secondary-text-color);
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(#A8653E, #301508);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0px 4px 6px rgba(66, 47, 47, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 25px 10px;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+  }
+
+  .cta-button {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 20px 10px;
+  }
+
+  .cta-section h2 {
+    font-size: 24px;
+  }
+
+  .cta-section p {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
+
 /* Contact-us */
 
 #contact-form {
@@ -1158,7 +1253,8 @@ p {
   flex: 1;
   min-width: 40%;
 }
-.form-wrapper h2{
+
+.form-wrapper h2 {
   color: white;
   font-size: 20px;
 }
@@ -1248,10 +1344,11 @@ button {
   width: 20%;
   text-align: center;
 }
+
 .logo {
   display: flex;
-  align-items: center; 
-  gap: 8px; 
+  align-items: center;
+  gap: 8px;
 }
 
 .logo img {
@@ -1362,25 +1459,30 @@ button {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Logo और description को center करने के लिए */
+    align-items: center;
+    /* Logo और description को center करने के लिए */
     margin-bottom: 20px;
   }
 
   .logo {
     display: flex;
     align-items: center;
-    justify-content: center; /* Logo और Text दोनों को center करने के लिए */
+    justify-content: center;
+    /* Logo और Text दोनों को center करने के लिए */
     gap: 10px;
   }
 
   .brand-name {
-    margin-top: 0; /* Extra space remove करने के लिए */
+    margin-top: 0;
+    /* Extra space remove करने के लिए */
     font-size: 20px;
   }
 
   .brand-description {
-    max-width: 80%; /* Text width को adjust करने के लिए */
-    text-align: center; /* Center alignment */
+    max-width: 80%;
+    /* Text width को adjust करने के लिए */
+    text-align: center;
+    /* Center alignment */
     margin-top: 8px;
   }
 

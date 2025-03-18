@@ -17,7 +17,7 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const observerOptions = {
-      threshold: 0.2, // Trigger when 20% of the element is visible
+      threshold: 0.2, 
     };
   
     const observerCallback = (entries) => {
@@ -34,13 +34,51 @@ document.addEventListener("DOMContentLoaded", () => {
     targets.forEach((target) => observer.observe(target));
   });
 
-  // contact-section
  
+ 
+ 
+
+
+// form submit
+
+document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("feedback-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-    alert("Thank you for your feedback!");
-    this.reset();
+    event.preventDefault(); // Form submit hone se rokein
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
+
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Phone:", phone);
+    console.log("Message:", message);
+
+    if (!message) {
+      alert("Message field is empty! Please enter your message.");
+      return;
+    }
+
+    let whatsappNumber = "919334201643"; // Apna number yaha replace karein
+    let whatsappMessage = ` Form Submission:
+    *Name:* ${name}
+    *Email:* ${email}
+    *Phone:* ${phone}
+    *Message:* ${message}`;
+
+    let encodedMessage = encodeURIComponent(whatsappMessage);
+    let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
   });
+});
+
+
+
+
+
+
 
 
 
