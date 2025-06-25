@@ -175,14 +175,19 @@ ul{
 
 /* Hero Section */
 .hero-section {
-    background-color: #0b0b0d;
-    color: white;
-    text-align: center;
-    padding: 100px 16px;
-    position: relative;
-    min-height: 90vh;
- 
+  background-image: linear-gradient(rgba(11, 11, 13, 0.6), rgba(11, 11, 13, 0.6)), 
+    url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  text-align: center;
+  padding: 100px 16px;
+  position: relative;
+  min-height: 60vh;
 }
+
 
 /* Container */
 .hr-container {

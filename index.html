@@ -8,6 +8,121 @@
   <link rel="icon" href="./assets/Logo.jpg" type="image/jpg" />
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+  .section {
+  width: 100%;
+  padding: 2rem;
+  background-color: black;
+
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h1 {
+  font-size: 2.5rem;
+  color: #c25f26;
+  margin-bottom: 0.8rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #d9d6d6;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.content-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image-side {
+  flex: 1 1 45%;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.content-side {
+  flex: 1 1 50%;
+  padding: 1rem 0;
+}
+
+.content-box {
+  margin-bottom: 2rem;
+}
+
+.content-box h4 {
+  color: white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.content-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.content-box p {
+  color: #d9d6d6;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
+
+  .section-header h1 {
+    font-size: 2rem;
+  }
+
+  .image-side img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h1 {
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
+  .content-box h3 {
+    font-size: 1rem;
+  }
+
+  .content-box p {
+    font-size: 14px;
+  }
+}
+  </style>
 </head>
 
 <body>
@@ -24,7 +139,7 @@
             <li><a href="#" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="service.html">Services</a></li>
-            <li><a href="#port">portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             
           </ul>
@@ -48,7 +163,7 @@
       <span class="tag">WELCOME TO KALOPE CONSULTANCY PRIVATE LIMITED</span>
       <h1>Your Path to Digital<br>Excellence</h1>
       <p>At ligula justo morbi sagittis fusce. Accumsan magna habitant non habitasse litora etiam torquent. Placerat
-        lobortis volutpat efficitur elementum sagittis leo amet euismod tristique.</p>
+        lobortis volutpat efficitur elementum sagittis leo amet euismod tristique plitiaj nbasyu uyasgg  sagtejh</p>
       <div class="hero-button">
         <a id="getbtn" href="#" class="get-started btn1">Get a Free Consultant</a>
       </div>
@@ -58,28 +173,34 @@
 
   <!-- Brand Design Section -->
   <div class="brand-section">
-    <div class="container">
-      <div class="brand-container">
-        <h2>Join over 300,000+ businesses to <br> create unique brand designs.</h2>
+    <div class="brand-container">
+      <h2>Join over 300,000+ businesses to <br> create unique brand designs.</h2>
 
-        <div class="brand-grid">
-          <div class="brand-logo"><img src="./assets/asset 6.png" alt="Brand 1"></div>
+      <div class="brand-marquee-wrapper">
+        <div class="brand-marquee-track">
+          
           <div class="brand-logo"><img src="./assets/asset 2.png" alt="Brand 2"></div>
           <div class="brand-logo"><img src="./assets/asset 3.png" alt="Brand 3"></div>
           <div class="brand-logo"><img src="./assets/asset 4.png" alt="Brand 4"></div>
           <div class="brand-logo"><img src="./assets/asset 5.png" alt="Brand 5"></div>
           <div class="brand-logo"><img src="./assets/asset 6.png" alt="Brand 6"></div>
           <div class="brand-logo"><img src="./assets/asset 7.png" alt="Brand 7"></div>
-          <div class="brand-logo"><img src="./assets/asset 4.png" alt="Brand 7"></div>
-          <div class="brand-logo"><img src="./assets/asset 2.png" alt="Brand 7"></div>
-          <div class="brand-logo"><img src="./assets/asset 3.png" alt="Brand 7"></div>
+          <div class="brand-logo"><img src="./assets/asset 3.png" alt="Brand 3 again"></div>
+          <div class="brand-logo"><img src="./assets/asset 2.png" alt="Brand 2 again"></div>
+          
+          <div class="brand-logo"><img src="./assets/asset 2.png" alt="Brand 2"></div>
+          <div class="brand-logo"><img src="./assets/asset 3.png" alt="Brand 3"></div>
+          <div class="brand-logo"><img src="./assets/asset 4.png" alt="Brand 4"></div>
+          <div class="brand-logo"><img src="./assets/asset 5.png" alt="Brand 5"></div>
+          <div class="brand-logo"><img src="./assets/asset 6.png" alt="Brand 6"></div>
           <div class="brand-logo"><img src="./assets/asset 7.png" alt="Brand 7"></div>
-          <div class="brand-logo"><img src="./assets/asset 3.png" alt="Brand 7"></div>
+          <div class="brand-logo"><img src="./assets/asset 3.png" alt="Brand 3 again"></div>
+          <div class="brand-logo"><img src="./assets/asset 2.png" alt="Brand 2 again"></div>
         </div>
       </div>
+
     </div>
   </div>
-
 
 
 
@@ -101,7 +222,7 @@
           <p>
             Pede inceptos dui diam felis vehicula rutrum ridiculus at consectetur nam
             et mollis vitae netus duis pellentesque ligula aenean taciti eget tincidunt
-            commodo tristique elit.
+            commodo tristique elit this Company not a small lagre model to work high proffessional leve to conveted any person to person to say happy clients  beacuse any person have self doubt to improve .
           </p>
 
           <a href="" class="get-started">DISCOVER MORE</a>
@@ -113,39 +234,46 @@
 
 
   <!-- OUR VALUE -->
-
-  <section class="grid-section">
-
+<section class="section">
     <div class="container">
-      <div class="grid-container">
-        <div class="box box1"><img class="grid-img" src="./assets/asset 24.jpeg" alt="">
+      <div class="section-header">
+        <h1>Why Choose Kalope</h1>
+        <p>
+          We blend creativity, strategy, and technology to craft digital solutions that elevate your brand and deliver impactful results.
+        </p>
+      </div>
 
+      <div class="content-container">
+        <!-- Left Image -->
+        <div class="image-side">
+          <img
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80"
+            alt="Team collaboration"
+          />
+        </div>
 
-          <div class="overlay">
-            <h4>
-              OUR VALUE</h4>
-            <h2>Smart Designs, Sharp Results - Choose Kalope for Digital Excellence.</h2>
-            <p>Neque sodales elementum fames ac nunc pellentesque penatibus. Consectetuer donec nascetur fames metus est
-              faucibus sodales commodo natoque consequat fusce.</p>
-
+        <!-- Right Content -->
+        <div class="content-side">
+          <div class="content-box">
+            <h4>Our Vision</h4>
+            
+            <p>
+              We transform ideas into powerful digital experiences that connect, engage, and inspire your audience while driving meaningful business growth Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, libero?.
+            </p>
           </div>
-        </div>
 
-        <div class="box box2 sbox">
-          <h4>Our Vision</h4>
-          <h3>Elevate Your Digital Presence with Kalope Expertise.</h3>
-          <p>Ac neque commodo litora nam mattis platea dui molestie aenean integer potenti imperdiet class semper</p>
-        </div>
-
-        <div class="box box3 sbox">
-          <h4>Our Mission</h4>
-          <h3>Unleash Your Potential in the Digital Realm with Kalope.</h3>
-          <p>Ac neque commodo litora nam mattis platea dui molestie aenean integer potenti imperdiet class semper</p>
+          <div class="content-box">
+            <h4>Our Mission</h4>
+            
+            <p>
+              Empowering businesses to thrive in the digital landscape through innovative solutions, strategic thinking, and unwavering commitment to excellence Lorem ipsum dolor sit amet consectetur khiuihu hggbyjugy.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-
-  </section>
+  </section>>
+ 
 
 
   <!-- stas -section -->
@@ -313,43 +441,48 @@
   </section>
 
   <!-- What Our Clients Say -->
-  <section class="testimonial-section">
-    <h2 class="testimonial-heading">What Your Clients Say</h2>
-    <div class="testimonial-grid">
+<section class="testimonial-section">
+  <h2 class="testimonial-heading">What Your Clients Say</h2>
+
+  <div class="relative">
+    <div id="testimonialSlider">
+      <!-- Card 1 -->
       <div class="testimonial-card">
         <img alt="testimonial" class="testimonial-img"
-          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <p class="testimonial-text">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's
-          cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut
-          adaptogen squid fanny pack vaporware.</p>
+          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80" />
+        <p class="testimonial-text">Edison bulb retro cloud bread echo park...</p>
         <span class="separator"></span>
         <h2 class="testimonial-name">HOLDEN CAULFIELD</h2>
         <p class="testimonial-role">Senior Product Designer</p>
       </div>
 
+      <!-- Card 2 -->
       <div class="testimonial-card">
         <img alt="testimonial" class="testimonial-img"
-          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <p class="testimonial-text">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's
-          cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut
-          adaptogen squid fanny pack vaporware.</p>
+          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80" />
+        <p class="testimonial-text">Single-origin coffee ennui shaman taiyaki...</p>
         <span class="separator"></span>
         <h2 class="testimonial-name">ALPER KAMU</h2>
         <p class="testimonial-role">UI Developer</p>
       </div>
 
+      <!-- Card 3 -->
       <div class="testimonial-card">
         <img alt="testimonial" class="testimonial-img"
-          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <p class="testimonial-text">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's
-          cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut
-          adaptogen squid fanny pack vaporware.</p>
+          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80" />
+        <p class="testimonial-text">Cricket echo park retro vaporware squid...</p>
         <span class="separator"></span>
         <h2 class="testimonial-name">HENRY LETHAM</h2>
         <p class="testimonial-role">CTO</p>
       </div>
     </div>
-  </section>
+
+    <!-- Arrows -->
+    <button id="prevBtn">←</button>
+    <button id="nextBtn">→</button>
+  </div>
+</section>
+
 
 <!-- Cta Sections -->
   <section class="cta-section">
@@ -473,7 +606,36 @@
 
 
   <script src="./index.js"></script>
-  
+  <script>
+  const slider = document.getElementById('testimonialSlider');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let currentIndex = 0;
+
+  function scrollToCard(index) {
+    const cardWidth = slider.children[0].offsetWidth;
+    slider.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth'
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < slider.children.length - 1) {
+      currentIndex++;
+      scrollToCard(currentIndex);
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      scrollToCard(currentIndex);
+    }
+  });
+</script>
+
 
 </body>
 
