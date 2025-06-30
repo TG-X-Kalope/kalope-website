@@ -7,6 +7,647 @@
     <link rel="icon" href="./assets/Logo.jpg" type="image/jpg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="blog.css">
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #9b96b0;
+  --padding-inline-section: 15px;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+   background: #0a0a0a;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  color: var(--secondary-text-color);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--primary-text-color);
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* utility */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: var(--padding-inline-section);
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: white 1px;
+  z-index: 1000;
+}
+
+.logo {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.nav {
+  margin-right: 28px;
+}
+
+.nav-links {
+  gap: 28px;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links .active {
+  color: #d66c2a;
+}
+
+.get-started {
+  font-size: 14px;
+  background: linear-gradient(to right, #aa6642, #834d2b);
+  padding: 8px 28px;
+  border-radius: 23px;
+  transition: all 0.2s;
+}
+
+.get-started:hover {
+  background: linear-gradient(90deg, #c87c50, #a8653e);
+}
+
+.get-started:active {
+  background: linear-gradient(90deg, #a8653e, #8b4d31);
+  transform: scale(0.95);
+}
+
+.hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 909px) {
+  .header {
+    background-color: #a8653e;
+  }
+
+  .nav {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    flex-direction: column;
+    width: 100%;
+    transform: translate(-100%);
+    transition: all 0.2s;
+  }
+
+  .active {
+    transform: translatex(0);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    padding-block: 20px;
+  }
+
+  .hamburger {
+    display: block;
+    color: var(--primary-text-color);
+    font-size: 28px;
+    margin-right: 18px;
+  }
+
+  .get-started {
+    display: none;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: linear-gradient(
+      rgba(11, 11, 13, 0.55),
+      rgba(11, 11, 13, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  text-align: center;
+  padding: 100px 16px;
+  position: relative;
+  min-height: 60vh;
+}
+
+.hr-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.subheading {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #d66c2a;
+}
+
+.main-heading {
+  font-size: 63px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 18px;
+  color: #b3b3b3;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: auto;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #d66c2a, #b65620, #8f4018);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.primary-btn:hover {
+  opacity: 0.8;
+}
+
+.secondary-btn {
+  border: 2px solid white;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Blog Section */
+blog-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+        }
+
+        .blog-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: radial-gradient(ellipse at center top, rgba(214, 108, 42, 0.1) 0%, transparent 70%);
+        }
+
+        .blog-container {
+            text-align: center;
+            max-width: 1200px;
+            padding: 16px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-container h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: white;
+            background: linear-gradient(135deg, #ffffff, #d66c2a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-container > p {
+            font-size: 1.3rem;
+            margin-bottom: 60px;
+            color: #c0c0c0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 60px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: linear-gradient(145deg, #1e293b, #2d3748);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            text-align: left;
+            position: relative;
+            border: 1px solid rgba(214, 108, 42, 0.1);
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(214, 108, 42, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .blog-card:hover::before {
+            opacity: 1;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(214, 108, 42, 0.1);
+            border-color: rgba(214, 108, 42, 0.3);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(214, 108, 42, 0.2));
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image::before {
+            background: linear-gradient(135deg, rgba(0,0,0,0.1), rgba(214, 108, 42, 0.4));
+        }
+
+        .blog-image i {
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .blog-card:hover .blog-image i {
+            transform: scale(1.2);
+        }
+
+        .blog-content {
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .blog-category {
+            background: linear-gradient(135deg, #d66c2a, #b65620);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(214, 108, 42, 0.3);
+        }
+
+        .blog-date {
+            color: #9b96b0;
+            font-weight: 500;
+        }
+
+        .blog-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: white;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .blog-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #c0c0c0;
+            margin-bottom: 25px;
+        }
+
+        .read-more {
+            color: #d66c2a;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.4s ease;
+            padding: 8px 0;
+        }
+
+        .read-more:hover {
+            color: #b65620;
+            gap: 15px;
+            transform: translateX(5px);
+        }
+
+        .read-more i {
+            font-size: 0.9rem;
+            transition: transform 0.4s ease;
+        }
+
+        .read-more:hover i {
+            transform: rotate(45deg);
+        }
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .blog-container h2 {
+    font-size: 2rem;
+  }
+
+  .blog-container > p {
+    font-size: 1rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: black;
+  color: #4b5563;
+  padding: 40px 0;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.brand {
+  width: 20%;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  text-align: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.brand-name {
+  font-size: 25px;
+  font-weight: bold;
+  display: block;
+  color: var(--primary-text-color);
+  margin-top: 5px;
+}
+
+.brand-description {
+  font-size: 14px;
+  color: var(--secondary-text-color);
+}
+
+.footer-links {
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+}
+
+.column {
+  width: 22%;
+}
+
+.column h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-text-color);
+  margin-bottom: 10px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 8px;
+}
+
+.column ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: white;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  color: #d66c2a;
+}
+
+/* Media query for footer */
+@media screen and (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .brand-name {
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  .brand-description {
+    max-width: 80%;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .column {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+</style>
 </head>
 <body>
     <header class="header">
@@ -19,7 +660,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="service.html">Services</a></li>
-                        <li><a href="blog.html" class="active">Blog</a></li>
+                        <li><a href="blog.html" class="active">Blog & Case Study</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                         
                     </ul>
@@ -40,17 +681,14 @@
                 digital marketing, and business growth. Discover valuable content that helps 
                 you stay ahead in the digital world.
             </p>
-            <div class="buttons">
-                <a href="#blog-section" class="primary-btn">Read Our Articles</a>
-                <a href="#" class="secondary-btn">Subscribe to Newsletter</a>
-            </div>
+           
         </div>
     </section>
 
-    <section class="blog-section" id="blog-section">
+     <section class="blog-section" id="blog-section">
         <div class="blog-container">
-            <h2>Latest Articles</h2>
-            <p>Explore our collection of insightful articles, tutorials, and industry updates to help grow your business.</p>
+            <h2>Featured Articles</h2>
+            <p>Explore our curated collection of insights and expert knowledge to accelerate your business growth.</p>
             
             <div class="blog-grid">
                 <article class="blog-card">
@@ -59,92 +697,30 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span class="blog-category">Digital Marketing</span>
+                            <span class="blog-category">Blog Page</span>
                             <span class="blog-date">June 20, 2025</span>
                         </div>
                         <h3>The Future of Digital Marketing: AI-Powered Strategies</h3>
-                        <p>Discover how artificial intelligence is revolutionizing digital marketing and learn the strategies that will dominate in 2025 and beyond.</p>
-                        <a href="more.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        <p>Discover how artificial intelligence is revolutionizing digital marketing and learn the cutting-edge strategies that will dominate in 2025 and beyond. Transform your approach with data-driven insights.</p>
+                        <a href="more.html" class="read-more">Blog more <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <article class="blog-card">
-                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');">
-                        <i class="fa-solid fa-code"></i>
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80');">
+                        <i class="fa-solid fa-palette"></i>
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span class="blog-category">Web Development</span>
+                            <span class="blog-category">Case Study</span>
                             <span class="blog-date">June 18, 2025</span>
                         </div>
-                        <h3>Modern Web Development Trends to Watch</h3>
-                        <p>Stay ahead of the curve with the latest web development technologies, frameworks, and best practices that are shaping the industry.</p>
-                        <a href="more.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">App Development</span>
-                            <span class="blog-date">June 15, 2025</span>
-                        </div>
-                        <h3>Building Scalable Mobile Applications</h3>
-                        <p>Learn the essential principles and best practices for creating mobile applications that can scale with your growing user base.</p>
-                        <a href="more.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Business Growth</span>
-                            <span class="blog-date">June 12, 2025</span>
-                        </div>
-                        <h3>SEO Strategies That Actually Work in 2025</h3>
-                        <p>Explore proven SEO techniques and strategies that drive real results, from keyword research to technical optimization.</p>
-                        <a href="more.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Security</span>
-                            <span class="blog-date">June 10, 2025</span>
-                        </div>
-                        <h3>Cybersecurity Best Practices for Small Businesses</h3>
-                        <p>Protect your business with essential cybersecurity measures that every small business owner should implement today.</p>
-                        <a href="more.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2032&q=80');">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Technology</span>
-                            <span class="blog-date">June 8, 2025</span>
-                        </div>
-                        <h3>Understanding Machine Learning for Business</h3>
-                        <p>Demystify machine learning and discover how businesses are leveraging AI to improve operations and customer experiences.</p>
-                        <a href="more.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3>Modern Graphic Design Trends & Visual Identity</h3>
+                        <p>Explore the latest graphic design trends that are shaping brand identities in 2025. Learn how visual storytelling and modern aesthetics can elevate your brand presence and engage audiences.</p>
+                        <a href="casestudy.html" class="read-more">Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
-
-            <a href="#" class="load-more-btn">Load More Articles</a>
         </div>
     </section>
 
@@ -153,7 +729,7 @@
             <div class="footer-top">
                 <div class="brand">
                     <div class="logo">
-                        <img src="https://via.placeholder.com/40x40/d66c2a/ffffff?text=K" alt="Logo">
+                        <img src="assets/Logo.jpg" alt="Logo">
                         <span class="brand-name">Kalope</span>
                     </div>
                     <p class="brand-description">Innovating through technology and creativity, building the future.</p>
