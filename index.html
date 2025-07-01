@@ -158,7 +158,11 @@
   </header>
 
   <!-- Hero Section -->
+   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
   <div class="hero-section">
+    <div id="tsparticles"></div>
+
     <div class="hero-container">
       <span class="tag">WELCOME TO KALOPE CONSULTANCY PRIVATE LIMITED</span>
       <h1>Your Path to Digital<br>Excellence</h1>
@@ -170,6 +174,60 @@
       <img src="./assets/asset 22.png" class="shadow" alt="">
     </div>
   </div>
+  <script>
+  tsParticles.load("tsparticles", {
+    fullScreen: { enable: false },
+    background: {
+      color: {
+        value: "#000000"
+      }
+    },
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          area: 800
+        }
+      },
+      color: {
+        value: "#ffffff"
+      },
+      shape: {
+        type: "circle"
+      },
+      opacity: {
+        value: 0.5
+      },
+      size: {
+        value: 3
+      },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        outModes: {
+          default: "bounce"
+        }
+      }
+    },
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: "repulse"
+        },
+        resize: true
+      },
+      modes: {
+        repulse: {
+          distance: 100
+        }
+      }
+    }
+  });
+</script>
+
 
   <!-- Brand Design Section -->
   <div class="brand-section">
@@ -220,9 +278,7 @@
 
 
           <p>
-            Pede inceptos dui diam felis vehicula rutrum ridiculus at consectetur nam
-            et mollis vitae netus duis pellentesque ligula aenean taciti eget tincidunt
-            commodo tristique elit this Company not a small lagre model to work high proffessional leve to conveted any person to person to say happy clients  beacuse any person have self doubt to improve .
+            At Kalope Consultancy Private Limited, we are a results-driven digital marketing agency committed to helping businesses thrive in the online world. With a team of creative thinkers, strategists, and technology experts, we specialize in delivering impactful solutions across SEO, social media, content marketing, paid advertising, and more. Our mission is to bridge the gap between brands and their customers by creating meaningful digital experiences that drive engagement, build loyalty.
           </p>
 
           <a href="" class="get-started">DISCOVER MORE</a>
@@ -303,34 +359,7 @@
     </div>
   </section>
 
-   <!-- <section class="stats-section">
-
-    <div class="container">
-      <div class="stats-container">
-        <div class="stat-item">
-          <h2>56<span>K+</span></h2>
-          <p>Happy Clients</p>
-        </div>
-        <div class="stat-item">
-          <h2>38<span>K+</span></h2>
-          <p>Client Ratings</p>
-        </div>
-        <div class="stat-item">
-          <h2>4.7</h2>
-          <p>Award Winning</p>
-        </div>
-        <div class="stat-item">
-          <h2>35<span>+</span></h2>
-          <p>Projects Completed</p>
-        </div>
-      </div>
-    </div>
-
-  </section> -->
-
-
-
-
+  
 
   <!-- start what we offer -->
 

@@ -437,6 +437,85 @@
                 display: none;
             }
         }
+
+
+
+        /* CTA Sections */
+
+
+.cta-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  /* Increased top margin for more space */
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(#A8653E, #301508);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: var(--secondary-text-color);
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(#A8653E, #301508);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0px 4px 6px rgba(66, 47, 47, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 25px 10px;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+  }
+
+  .cta-button {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 20px 10px;
+  }
+
+  .cta-section h2 {
+    font-size: 24px;
+  }
+
+  .cta-section p {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
     </style>
 </head>
 <body>
@@ -642,8 +721,8 @@
                 <h2>Ready to Transform Your Marketing?</h2>
                 <p>Let our expert team help you implement AI-powered strategies that drive real results for your business.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="cta-btn primary">Get Started Today</a>
-                    <a href="#" class="cta-btn secondary">Download Our Guide</a>
+                    <a href="contact.html" class="cta-btn primary">Get Started Today</a>
+                    
                 </div>
             </div>
         </div>
