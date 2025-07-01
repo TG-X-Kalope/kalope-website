@@ -1,998 +1,1020 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study - Kalope</title>
-    <link rel="icon" href="./assets/Logo.jpg" type="image/jpg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary-text-color: #ffffff;
-  --secondary-text-color: #9b96b0;
-  --padding-inline-section: 15px;
-}
-
-body {
-  font-family: "poppins", sans-serif;
-   background: #0a0a0a;
-}
-
-h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.8rem;
-  color: var(--secondary-text-color);
-}
-
-a {
-  text-decoration: none;
-  cursor: pointer;
-  color: var(--primary-text-color);
-  display: inline-block;
-}
-
-ul {
-  list-style: none;
-}
-
-/* utility */
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.container {
-  max-width: 1280px;
-  margin-inline: auto;
-  padding: var(--padding-inline-section);
-}
-
-/* Header */
-.header {
-  width: 100%;
-  background-color: black;
-  position: sticky;
-  top: 0;
-  left: 0;
-  border-bottom: white 1px;
-  z-index: 1000;
-}
-
-.logo {
-  width: 3rem;
-  border-radius: 50%;
-}
-
-.nav {
-  margin-right: 28px;
-}
-
-.nav-links {
-  gap: 28px;
-  font-size: 15px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-links .active {
-  color: #d66c2a;
-}
-
-.get-started {
-  font-size: 14px;
-  background: linear-gradient(to right, #aa6642, #834d2b);
-  padding: 8px 28px;
-  border-radius: 23px;
-  transition: all 0.2s;
-}
-
-.get-started:hover {
-  background: linear-gradient(90deg, #c87c50, #a8653e);
-}
-
-.get-started:active {
-  background: linear-gradient(90deg, #a8653e, #8b4d31);
-  transform: scale(0.95);
-}
-
-.hamburger {
-  display: none;
-}
-
-@media only screen and (max-width: 909px) {
-  .header {
-    background-color: #a8653e;
-  }
-
-  .nav {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    flex-direction: column;
-    width: 100%;
-    transform: translate(-100%);
-    transition: all 0.2s;
-  }
-
-  .active {
-    transform: translatex(0);
-  }
-
-  .nav-links {
-    flex-direction: column;
-    background-color: black;
-    width: 100%;
-    padding-block: 20px;
-  }
-
-  .hamburger {
-    display: block;
-    color: var(--primary-text-color);
-    font-size: 28px;
-    margin-right: 18px;
-  }
-
-  .get-started {
-    display: none;
-  }
-}
-
-/* Hero Section */
-.hero-section {
-  
-  color: white;
-  text-align: center;
-  padding: 100px 16px;
-  position: relative;
-  min-height: 60vh;
-}
-
-.hr-container {
-  max-width: 900px;
-  margin: auto;
-}
-
-.subheading {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  color: #d66c2a;
-}
-
-.main-heading {
-  font-size: 63px;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-.description {
-  font-size: 18px;
-  color: #b3b3b3;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: auto;
-}
-
-@media (max-width: 768px) {
-  .main-heading {
-    font-size: 36px;
-  }
-
-  .description {
-    font-size: 16px;
-  }
-}
-
-/* Case Study Hero */
-.case-study-hero {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.case-study-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background: radial-gradient(ellipse at center top, rgba(214, 108, 42, 0.1) 0%, transparent 70%);
-}
-
-.case-hero-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 16px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
-
-.case-hero-container h2 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-    color: white;
-    background: linear-gradient(135deg, #ffffff, #d66c2a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.case-hero-container p {
-    font-size: 1.2rem;
-    color: #c0c0c0;
-    max-width: 600px;
-    margin: 0 auto 50px;
-}
-
-/* Case Study Details */
-.case-details {
-    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
-    border-radius: 20px;
-    padding: 40px;
-    margin: 40px auto;
-    max-width: 900px;
-    border: 1px solid rgba(214, 108, 42, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-.case-details::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(214, 108, 42, 0.05), transparent);
-    border-radius: 20px;
-}
-
-.case-header {
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.case-title {
-    font-size: 2.2rem;
-    color: white;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.case-subtitle {
-    font-size: 1.1rem;
-    color: #d66c2a;
-    font-weight: 500;
-}
-
-.case-overview {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.overview-item {
-    text-align: center;
-    padding: 20px;
-    background: rgba(214, 108, 42, 0.1);
-    border-radius: 12px;
-    border: 1px solid rgba(214, 108, 42, 0.2);
-}
-
-.overview-item h4 {
-    color: #d66c2a;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.overview-item p {
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-/* Case Study Content */
-.case-content {
-    padding: 60px 0;
-    background: #0a0a0a;
-}
-
-.content-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.content-section {
-    margin-bottom: 50px;
-}
-
-.content-section h3 {
-    color: white;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    position: relative;
-    padding-left: 20px;
-}
-
-.content-section h3::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 30px;
-    background: linear-gradient(135deg, #d66c2a, #b65620);
-    border-radius: 2px;
-}
-
-.content-section p {
-    color: #c0c0c0;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-.challenge-list, .solution-list {
-    list-style: none;
-    padding: 0;
-}
-
-.challenge-list li, .solution-list li {
-    color: #c0c0c0;
-    margin-bottom: 12px;
-    padding-left: 30px;
-    position: relative;
-}
-
-.challenge-list li::before {
-    content: '⚠️';
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
-}
-
-.solution-list li::before {
-    content: '✅';
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
-}
-
-/* Results Section */
-.results-section {
-    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
-    border-radius: 20px;
-    padding: 40px;
-    margin: 40px 0;
-    border: 1px solid rgba(214, 108, 42, 0.2);
-}
-
-.results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.result-card {
-    text-align: center;
-    padding: 25px;
-    background: rgba(214, 108, 42, 0.1);
-    border-radius: 15px;
-    border: 1px solid rgba(214, 108, 42, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.result-card:hover {
-    transform: translateY(-5px);
-}
-
-.result-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #d66c2a;
-    margin-bottom: 10px;
-}
-
-.result-label {
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-
-@media (max-width: 768px) {
-  .content-container {
-    padding: 0 12px;
-  }
-
-  .content-section h3 {
-    font-size: 1.5rem;
-    padding-left: 16px;
-  }
-
-  .content-section p {
-    font-size: 0.95rem;
-  }
-
-  .challenge-list li, .solution-list li {
-    font-size: 0.95rem;
-    padding-left: 26px;
-  }
-
-  .results-section {
-    padding: 25px 20px;
-  }
-
-  .result-card {
-    padding: 20px;
-  }
-
-  .result-number {
-    font-size: 2rem;
-  }
-
-  .result-label {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .content-section h3 {
-    font-size: 1.3rem;
-  }
-
-  .result-number {
-    font-size: 1.7rem;
-  }
-
-  .results-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .challenge-list li::before,
-  .solution-list li::before {
-    font-size: 1rem;
-  }
-}
-
-/* Call to Action */
-.cta-section {
-     background: linear-gradient(#A8653E, #301508);
-    padding: 60px 20px;
-    text-align: center;
-    margin: 60px 0 0 0;
-}
-
-.cta-content h3 {
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.cta-content p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-button {
-    background: white;
-    color: #090908;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.cta-button:hover {
-    background: #f0f0f0;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .case-hero-container h2 {
-        font-size: 2rem;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study - Kalope</title>
+  <link rel="icon" href="./assets/Logo.jpg" type="image/jpg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    
+
+    :root {
+      --primary-text-color: #ffffff;
+      --secondary-text-color: #9b96b0;
+      --padding-inline-section: 15px;
+    }
+
+    body {
+      font-family: "poppins", sans-serif;
+      background: #0a0a0a;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-family: "Roboto", sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.8rem;
+      color: var(--secondary-text-color);
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: var(--primary-text-color);
+      display: inline-block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* utility */
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin-inline: auto;
+      padding: var(--padding-inline-section);
+    }
+
+    /* Header */
+    .header {
+      width: 100%;
+      background-color: black;
+      position: sticky;
+      top: 0;
+      left: 0;
+      border-bottom: white 1px;
+      z-index: 1000;
+    }
+
+    .logo {
+      width: 3rem;
+      border-radius: 50%;
+    }
+
+    .nav {
+      margin-right: 28px;
+    }
+
+    .nav-links {
+      gap: 28px;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links .active {
+      color: #d66c2a;
+    }
+
+    .get-started {
+      font-size: 14px;
+      background: linear-gradient(to right, #aa6642, #834d2b);
+      padding: 8px 28px;
+      border-radius: 23px;
+      transition: all 0.2s;
+    }
+
+    .get-started:hover {
+      background: linear-gradient(90deg, #c87c50, #a8653e);
+    }
+
+    .get-started:active {
+      background: linear-gradient(90deg, #a8653e, #8b4d31);
+      transform: scale(0.95);
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    @media only screen and (max-width: 909px) {
+      .header {
+        background-color: #a8653e;
+      }
+
+      .nav {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        flex-direction: column;
+        width: 100%;
+        transform: translate(-100%);
+        transition: all 0.2s;
+      }
+
+      .active {
+        transform: translatex(0);
+      }
+
+      .nav-links {
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        padding-block: 20px;
+      }
+
+      .hamburger {
+        display: block;
+        color: var(--primary-text-color);
+        font-size: 28px;
+        margin-right: 18px;
+      }
+
+      .get-started {
+        display: none;
+      }
+    }
+
+    /* Hero Section */
+    .hero-section {
+
+      color: white;
+      text-align: center;
+      padding: 100px 16px;
+      position: relative;
+      min-height: 60vh;
+    }
+
+    .hr-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .subheading {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: #d66c2a;
+    }
+
+    .main-heading {
+      font-size: 63px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 18px;
+      color: #b3b3b3;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    @media (max-width: 768px) {
+      .main-heading {
+        font-size: 36px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+    }
+
+    /* Case Study Hero */
+    .case-study-hero {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-study-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: radial-gradient(ellipse at center top, rgba(214, 108, 42, 0.1) 0%, transparent 70%);
+    }
+
+    .case-hero-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 16px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .case-hero-container h2 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: white;
+      background: linear-gradient(135deg, #ffffff, #d66c2a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .case-hero-container p {
+      font-size: 1.2rem;
+      color: #c0c0c0;
+      max-width: 600px;
+      margin: 0 auto 50px;
+    }
+
+    /* Case Study Details */
     .case-details {
+      background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px auto;
+      max-width: 900px;
+      border: 1px solid rgba(214, 108, 42, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-details::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(214, 108, 42, 0.05), transparent);
+      border-radius: 20px;
+    }
+
+    .case-header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .case-title {
+      font-size: 2.2rem;
+      color: white;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .case-subtitle {
+      font-size: 1.1rem;
+      color: #d66c2a;
+      font-weight: 500;
+    }
+
+    .case-overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .overview-item {
+      text-align: center;
+      padding: 20px;
+      background: rgba(214, 108, 42, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(214, 108, 42, 0.2);
+    }
+
+    .overview-item h4 {
+      color: #d66c2a;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .overview-item p {
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* Case Study Content */
+    .case-content {
+      padding: 60px 0;
+      background: #0a0a0a;
+    }
+
+    .content-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .content-section {
+      margin-bottom: 50px;
+    }
+
+    .content-section h3 {
+      color: white;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .content-section h3::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 30px;
+      background: linear-gradient(135deg, #d66c2a, #b65620);
+      border-radius: 2px;
+    }
+
+    .content-section p {
+      color: #c0c0c0;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .challenge-list,
+    .solution-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .challenge-list li,
+    .solution-list li {
+      color: #c0c0c0;
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .challenge-list li::before {
+      content: '⚠️';
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    .solution-list li::before {
+      content: '✅';
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    /* Results Section */
+    .results-section {
+      background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0;
+      border: 1px solid rgba(214, 108, 42, 0.2);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .result-card {
+      text-align: center;
+      padding: 25px;
+      background: rgba(214, 108, 42, 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(214, 108, 42, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .result-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .result-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #d66c2a;
+      margin-bottom: 10px;
+    }
+
+    .result-label {
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+
+    @media (max-width: 768px) {
+      .content-container {
+        padding: 0 12px;
+      }
+
+      .content-section h3 {
+        font-size: 1.5rem;
+        padding-left: 16px;
+      }
+
+      .content-section p {
+        font-size: 0.95rem;
+      }
+
+      .challenge-list li,
+      .solution-list li {
+        font-size: 0.95rem;
+        padding-left: 26px;
+      }
+
+      .results-section {
+        padding: 25px 20px;
+      }
+
+      .result-card {
+        padding: 20px;
+      }
+
+      .result-number {
+        font-size: 2rem;
+      }
+
+      .result-label {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content-section h3 {
+        font-size: 1.3rem;
+      }
+
+      .result-number {
+        font-size: 1.7rem;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .challenge-list li::before,
+      .solution-list li::before {
+        font-size: 1rem;
+      }
+    }
+
+    /* Call to Action */
+    .cta-section {
+      background: linear-gradient(#A8653E, #301508);
+      padding: 60px 20px;
+      text-align: center;
+      margin: 60px 0 0 0;
+    }
+
+    .cta-content h3 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .cta-content p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      background: white;
+      color: #090908;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .case-hero-container h2 {
+        font-size: 2rem;
+      }
+
+      .case-details {
         padding: 25px;
         margin: 20px 16px;
-    }
-    
-    .case-title {
+      }
+
+      .case-title {
         font-size: 1.8rem;
-    }
-    
-    .case-overview {
+      }
+
+      .case-overview {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-    
-    .results-grid {
+      }
+
+      .results-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-    
-    .result-number {
+      }
+
+      .result-number {
         font-size: 2rem;
+      }
     }
-}
 
-/* Footer */
-.footer {
-  background-color: black;
-  color: #4b5563;
-  padding: 40px 0;
-}
+    /* Footer */
+    .footer {
+      background-color: black;
+      color: #4b5563;
+      padding: 40px 0;
+    }
 
-.wrapper {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .wrapper {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e7eb;
-}
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-.brand {
-  width: 20%;
-  text-align: center;
-}
+    .brand {
+      width: 20%;
+      text-align: center;
+    }
 
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.footer-logo img {
-  text-align: center;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
+    .footer-logo img {
+      text-align: center;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
 
-.brand-name {
-  font-size: 25px;
-  font-weight: bold;
-  display: block;
-  color: var(--primary-text-color);
-  margin-top: 5px;
-}
+    .brand-name {
+      font-size: 25px;
+      font-weight: bold;
+      display: block;
+      color: var(--primary-text-color);
+      margin-top: 5px;
+    }
 
-.brand-description {
-  font-size: 14px;
-  color: var(--secondary-text-color);
-}
+    .brand-description {
+      font-size: 14px;
+      color: var(--secondary-text-color);
+    }
 
-.footer-links {
-  display: flex;
-  width: 75%;
-  justify-content: space-between;
-}
+    .footer-links {
+      display: flex;
+      width: 75%;
+      justify-content: space-between;
+    }
 
-.column {
-  width: 22%;
-}
+    .column {
+      width: 22%;
+    }
 
-.column h3 {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--primary-text-color);
-  margin-bottom: 10px;
-}
+    .column h3 {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--primary-text-color);
+      margin-bottom: 10px;
+    }
 
-.column ul {
-  list-style: none;
-  padding: 0;
-}
+    .column ul {
+      list-style: none;
+      padding: 0;
+    }
 
-.column ul li {
-  margin-bottom: 8px;
-}
+    .column ul li {
+      margin-bottom: 8px;
+    }
 
-.column ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
-  transition: color 0.3s;
-}
+    .column ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
 
-.footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-}
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+    }
 
-.footer-bottom p {
-  font-size: 14px;
-  color: white;
-}
+    .footer-bottom p {
+      font-size: 14px;
+      color: white;
+    }
 
-.footer-bottom a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s;
-}
+    .footer-bottom a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+    }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
 
-.social-icons a {
-  color: white;
-  font-size: 20px;
-  transition: transform 0.3s;
-}
+    .social-icons a {
+      color: white;
+      font-size: 20px;
+      transition: transform 0.3s;
+    }
 
-.social-icons a:hover {
-  transform: scale(1.1);
-  color: #d66c2a;
-}
+    .social-icons a:hover {
+      transform: scale(1.1);
+      color: #d66c2a;
+    }
 
-/* Media query for footer */
-@media screen and (max-width: 768px) {
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-.results-section{
-  margin: 5px;
-}
-  .brand {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+    /* Media query for footer */
+    @media screen and (max-width: 768px) {
+      .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
 
-  .footer-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
+      .results-section {
+        margin: 5px;
+      }
 
-  .brand-name {
-    margin-top: 0;
-    font-size: 20px;
-  }
+      .brand {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+      }
 
-  .brand-description {
-    max-width: 80%;
-    text-align: center;
-    margin-top: 8px;
-  }
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
 
-  .footer-links {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
+      .brand-name {
+        margin-top: 0;
+        font-size: 20px;
+      }
 
-  .column {
-    width: 100%;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-}
+      .brand-description {
+        max-width: 80%;
+        text-align: center;
+        margin-top: 8px;
+      }
 
-    </style>
+      .footer-links {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+
+      .column {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+  </style>
 
 </head>
+
 <body>
-    <header class="header">
-        <div class="container flex">
-            <a href=""><img class="logo" src="assets/Logo.jpg" alt="Kalope Logo"></a>
+  <header class="header">
+    <div class="container flex">
+      <a href=""><img class="logo" src="assets/Logo.jpg" alt="Kalope Logo"></a>
 
-            <div class="nav-container">
-                <nav class="nav" id="navbar">
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="service.html">Services</a></li>
-                        <li><a href="blog.html">Blog & Case Study</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </nav>
-            </div>
+      <div class="nav-container">
+        <nav class="nav" id="navbar">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog & Case Study</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
 
-            <a href="#" class="hamburger" id="menu"><i class="fa-solid fa-bars"></i></a>
-            <a href="contact.html" class="get-started">GET STARTED</a>
-        </div>
-    </header>
+      <a href="#" class="hamburger" id="menu"><i class="fa-solid fa-bars"></i></a>
+      <a href="contact.html" class="get-started">GET STARTED</a>
+    </div>
+  </header>
 
-    <section class="hero-section">
-        <div class="hr-container">
-            <p class="subheading">SUCCESS STORIES</p>
-            <h1 class="main-heading">Case Study</h1>
-            <p class="description">
-                Discover how we've helped businesses transform their digital presence 
-                and achieve remarkable growth through innovative solutions and strategic approaches.
-            </p>
-        </div>
-    </section>
+  <section class="hero-section">
+    <div class="hr-container">
+      <p class="subheading">SUCCESS STORIES</p>
+      <h1 class="main-heading">Case Study</h1>
+      <p class="description">
+        Discover how we've helped businesses transform their digital presence
+        and achieve remarkable growth through innovative solutions and strategic approaches.
+      </p>
+    </div>
+  </section>
 
-    <section class="case-study-hero">
-        <div class="case-hero-container">
-            <h2>Brand Transformation Success</h2>
-            <p>How we helped TechStart achieve 300% growth through strategic branding and modern design solutions</p>
-        </div>
-    </section>
+  <section class="case-study-hero">
+    <div class="case-hero-container">
+      <h2>Brand Transformation Success</h2>
+      <p>How we helped TechStart achieve 300% growth through strategic branding and modern design solutions</p>
+    </div>
+  </section>
 
-    <div class="case-details">
-        <div class="case-header">
-            <h2 class="case-title">TechStart Digital Transformation</h2>
-            <p class="case-subtitle">Complete Brand Overhaul & Digital Strategy Implementation</p>
-        </div>
-
-        <div class="case-overview">
-            <div class="overview-item">
-                <h4>Timeline</h4>
-                <p>6 Months</p>
-            </div>
-            <div class="overview-item">
-                <h4>Industry</h4>
-                <p>Technology</p>
-            </div>
-            <div class="overview-item">
-                <h4>Team Size</h4>
-                <p>8 Specialists</p>
-            </div>
-            <div class="overview-item">
-                <h4>Budget</h4>
-                <p>$50,000</p>
-            </div>
-        </div>
+  <div class="case-details">
+    <div class="case-header">
+      <h2 class="case-title">TechStart Digital Transformation</h2>
+      <p class="case-subtitle">Complete Brand Overhaul & Digital Strategy Implementation</p>
     </div>
 
-    <section class="case-content">
-        <div class="content-container">
-            <div class="content-section">
-                <h3>The Challenge</h3>
-                <p>TechStart was a promising startup with innovative technology solutions, but they faced significant challenges in establishing their market presence and attracting customers.</p>
-                <ul class="challenge-list">
-                    <li>Outdated visual identity that didn't reflect their innovative nature</li>
-                    <li>Inconsistent brand messaging across different platforms</li>
-                    <li>Low online visibility and poor search engine rankings</li>
-                    <li>Ineffective marketing campaigns with poor conversion rates</li>
-                    <li>Limited social media presence and engagement</li>
-                </ul>
-            </div>
+    <div class="case-overview">
+      <div class="overview-item">
+        <h4>Timeline</h4>
+        <p>6 Months</p>
+      </div>
+      <div class="overview-item">
+        <h4>Industry</h4>
+        <p>Technology</p>
+      </div>
+      <div class="overview-item">
+        <h4>Team Size</h4>
+        <p>8 Specialists</p>
+      </div>
+      <div class="overview-item">
+        <h4>Budget</h4>
+        <p>$50,000</p>
+      </div>
+    </div>
+  </div>
 
-            <div class="content-section">
-                <h3>Our Approach</h3>
-                <p>We developed a comprehensive strategy that addressed all aspects of their digital presence, from brand identity to marketing automation.</p>
-                <p>Our team conducted extensive market research and competitor analysis to understand the technology landscape and identify opportunities for differentiation. We then created a cohesive brand strategy that would resonate with their target audience.</p>
-            </div>
+  <section class="case-content">
+    <div class="content-container">
+      <div class="content-section">
+        <h3>The Challenge</h3>
+        <p>TechStart was a promising startup with innovative technology solutions, but they faced significant challenges
+          in establishing their market presence and attracting customers.</p>
+        <ul class="challenge-list">
+          <li>Outdated visual identity that didn't reflect their innovative nature</li>
+          <li>Inconsistent brand messaging across different platforms</li>
+          <li>Low online visibility and poor search engine rankings</li>
+          <li>Ineffective marketing campaigns with poor conversion rates</li>
+          <li>Limited social media presence and engagement</li>
+        </ul>
+      </div>
 
-            <div class="content-section">
-                <h3>Solutions Implemented</h3>
-                <ul class="solution-list">
-                    <li>Complete brand redesign with modern logo and visual identity system</li>
-                    <li>Professional website development with responsive design and SEO optimization</li>
-                    <li>Comprehensive digital marketing strategy including content marketing and PPC campaigns</li>
-                    <li>Social media management and community building across multiple platforms</li>
-                    <li>Marketing automation system implementation for lead nurturing</li>
-                    <li>Performance analytics and tracking system setup</li>
-                </ul>
-            </div>
+      <div class="content-section">
+        <h3>Our Approach</h3>
+        <p>We developed a comprehensive strategy that addressed all aspects of their digital presence, from brand
+          identity to marketing automation.</p>
+        <p>Our team conducted extensive market research and competitor analysis to understand the technology landscape
+          and identify opportunities for differentiation. We then created a cohesive brand strategy that would resonate
+          with their target audience.</p>
+      </div>
 
-            <div class="results-section">
-                <h3 style="color: white;">Results Achieved</h3>
-                <p>The transformation delivered exceptional results that exceeded all expectations and established TechStart as a leader in their industry.</p>
-                
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-number">300%</div>
-                        <div class="result-label">Revenue Growth</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-number">250%</div>
-                        <div class="result-label">Website Traffic</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-number">180%</div>
-                        <div class="result-label">Lead Generation</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-number">450%</div>
-                        <div class="result-label">Social Engagement</div>
-                    </div>
-                </div>
-            </div>
+      <div class="content-section">
+        <h3>Solutions Implemented</h3>
+        <ul class="solution-list">
+          <li>Complete brand redesign with modern logo and visual identity system</li>
+          <li>Professional website development with responsive design and SEO optimization</li>
+          <li>Comprehensive digital marketing strategy including content marketing and PPC campaigns</li>
+          <li>Social media management and community building across multiple platforms</li>
+          <li>Marketing automation system implementation for lead nurturing</li>
+          <li>Performance analytics and tracking system setup</li>
+        </ul>
+      </div>
 
-            <div class="content-section">
-                <h3>Key Takeaways</h3>
-                <p>This case study demonstrates the power of a holistic approach to digital transformation. By addressing brand identity, user experience, and digital marketing simultaneously, we were able to create a cohesive and powerful brand presence that drives real business results.</p>
-                <p>The success of this project reinforces our belief that effective digital transformation requires both creative excellence and strategic thinking, backed by data-driven decision making and continuous optimization.</p>
-            </div>
+      <div class="results-section">
+        <h3 style="color: white;">Results Achieved</h3>
+        <p>The transformation delivered exceptional results that exceeded all expectations and established TechStart as
+          a leader in their industry.</p>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-number">300%</div>
+            <div class="result-label">Revenue Growth</div>
+          </div>
+          <div class="result-card">
+            <div class="result-number">250%</div>
+            <div class="result-label">Website Traffic</div>
+          </div>
+          <div class="result-card">
+            <div class="result-number">180%</div>
+            <div class="result-label">Lead Generation</div>
+          </div>
+          <div class="result-card">
+            <div class="result-number">450%</div>
+            <div class="result-label">Social Engagement</div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section class="cta-section">
-        <div class="cta-content">
-            <h3>Ready to Transform Your Business?</h3>
-            <p>Let us help you achieve similar results. Contact us today to discuss your project and discover how we can accelerate your business growth.</p>
-            <a href="contact.html" class="cta-button">Start Your Project</a>
+      <div class="content-section">
+        <h3>Key Takeaways</h3>
+        <p>This case study demonstrates the power of a holistic approach to digital transformation. By addressing brand
+          identity, user experience, and digital marketing simultaneously, we were able to create a cohesive and
+          powerful brand presence that drives real business results.</p>
+        <p>The success of this project reinforces our belief that effective digital transformation requires both
+          creative excellence and strategic thinking, backed by data-driven decision making and continuous optimization.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-content">
+      <h3>Ready to Transform Your Business?</h3>
+      <p>Let us help you achieve similar results. Contact us today to discuss your project and discover how we can
+        accelerate your business growth.</p>
+      <a href="contact.html" class="cta-button">Start Your Project</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="footer-top">
+        <div class="brand">
+          <div class="footer-logo">
+            <img src="assets/Logo.jpg" alt="Logo">
+            <span class="brand-name">Kalope</span>
+          </div>
+          <p class="brand-description">Innovating through technology and creativity, building the future.</p>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="wrapper">
-            <div class="footer-top">
-                <div class="brand">
-                    <div class="footer-logo">
-                        <img src="assets/Logo.jpg" alt="Logo">
-                        <span class="brand-name">Kalope</span>
-                    </div>
-                    <p class="brand-description">Innovating through technology and creativity, building the future.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="column">
-                        <h3>Explore</h3>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Service</a></li>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <h3>Contact</h3>
-                        <ul>
-                            <li><a href="#"><i class="fa-solid fa-location-dot"></i> Near Bus Stands Patna, Bihar, India,(234567)</a></li>
-                            <li><a href="#"><i class="fa-solid fa-phone-volume"></i> +91 9341492504</a></li>
-                            <li><a href="#"><i class="fa-solid fa-envelope"></i> kalope@gmail.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2025 Kalope — <a href="https://twitter.com/knyttneve">All Right Reserved</a></p>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
+        <div class="footer-links">
+          <div class="column">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Service</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="#"><i class="fa-solid fa-location-dot"></i> SHOP NO.46, District Board Market,
+                  Ranchi Rd, Bharaopar,
+                  Ramchandrapur, Bihar Sharif, Nalanda,
+                  Bihar, 803101</a></li>
+              <li><a href="#"><i class="fa-solid fa-phone-volume"></i> +91 9341492504</a></li>
+              <li><a href="#"><i class="fa-solid fa-envelope"></i> kalope@gmail.com</a></li>
+            </ul>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script>
-        // Get the hamburger menu and navigation menu
-        const hamburger = document.getElementById('menu');
-        const navMenu = document.getElementById('navbar');
+      <div class="footer-bottom">
+        <p>© 2025 Kalope — <a href="https://twitter.com/knyttneve">All Right Reserved</a></p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-        // Toggle the active class on the nav menu when hamburger is clicked
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+  <script>
+    // Get the hamburger menu and navigation menu
+    const hamburger = document.getElementById('menu');
+    const navMenu = document.getElementById('navbar');
+
+    // Toggle the active class on the nav menu when hamburger is clicked
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    window.addEventListener('scroll', () => {
+      if (navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Animate result cards on scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observerCallback = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
         });
+      };
 
-        window.addEventListener('scroll', () => {
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-            }
-        });
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+      // Animate result cards
+      const resultCards = document.querySelectorAll('.result-card');
+      resultCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+      });
 
-        // Animate result cards on scroll
-        document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observerCallback = (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-            // Animate result cards
-            const resultCards = document.querySelectorAll('.result-card');
-            resultCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-                observer.observe(card);
-            });
-
-            // Animate content sections
-            const contentSections = document.querySelectorAll('.content-section');
-            contentSections.forEach((section, index) => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
-                observer.observe(section);
-            });
-        });
-    </script>
+      // Animate content sections
+      const contentSections = document.querySelectorAll('.content-section');
+      contentSections.forEach((section, index) => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
+        observer.observe(section);
+      });
+    });
+  </script>
 </body>
+
 </html>
